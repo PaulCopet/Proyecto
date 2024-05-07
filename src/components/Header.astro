@@ -1,14 +1,21 @@
 <header title="Header">
-    <nav class="menu-container flex relative items-center p-5">
+    <nav class="menu-container flex items-center">
+        <!-- menu-container-->
         <!-- Implementacion del menu Hamburguesa-->
-        <input type="checkbox" aria-label="Toggle menu" />
+        <input
+            type="checkbox"
+            aria-label="Toggle menu"
+            class="menu-toggle"
+            id="menu-toggle"
+        />
         <!-- Lineas del menu -->
         <span></span>
         <span></span>
         <span></span>
 
         <!-- logo -->
-        <a href="#" class="menu-logo mr-10">
+        <a href="#" class="menu-logo">
+            <!--menu-logo-->
             <img
                 class="max-h-10 shrink-0"
                 src="https://wweb.dev/resources/navigation-generator/logo-placeholder.png"
@@ -18,10 +25,11 @@
 
         <!-- menu items -->
         <div class="menu">
+            <!--menu-->
             <ul></ul>
             <ul>
                 <li>
-                    <a href="#"> Inicio </a>
+                    <a href="#" class="active"> Inicio </a>
                 </li>
                 <li>
                     <a href="#"> Quienes Somos </a>
@@ -29,8 +37,8 @@
                 <li>
                     <a href="#"> Servicios </a>
                 </li>
-                <li class="SeparaCita">
-                    <a href=""> Separa tu cita </a>
+                <li>
+                    <a href="#"> Separa tu cita </a>
                 </li>
             </ul>
         </div>
@@ -39,20 +47,29 @@
 
 <style>
     .menu-container {
-        background: rgb(218, 218, 218);
-        color: #000000;
+        background: rgba(218, 218, 218, 255);
+        backdrop-filter: blur(4px);
         z-index: 1;
         -webkit-user-select: none;
         user-select: none;
         box-sizing: border-box;
+        height: 70px;
+        padding: 0 10%;
+        position: absolute;
+        justify-content: center;
     }
 
-    .menu-container a {
+    .menu a {
         text-decoration: none;
         color: #232323;
+        font-size: 20px;
+        font-weight: 500; /* semibold */
         transition: color 0.3s ease;
+        border-radius: 20px;
+        padding: 4px 10px;
     }
 
+    /* Animaciones de la burger */
     .menu-container input {
         display: block;
         width: 35px;
@@ -81,14 +98,6 @@
             background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
             opacity 0.55s ease;
     }
-    .SeparaCita {
-        background: #84b521;
-        border-radius: 15px;
-
-        &:hover {
-            background: #6a921b;
-        }
-    }
 
     /* Animaciones de la Burger */
     .menu-container span:first-child {
@@ -114,21 +123,14 @@
         transform: rotate(-45deg) translate(-5px, 11px);
     }
 
-    .menu ul {
-        list-style: none;
-    }
-
-    .menu li {
-        padding: 10px 0;
-        font-size: 22px;
-    }
-
     /* mobile styles */
-    @media only screen and (max-width: 817px) {
+
+    @media only screen and (max-width: 818px) {
         .menu-container {
             flex-direction: column;
             align-items: flex-end;
-            transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+            position: relative;
+            z-index: 10; /* Asegúrate de que el menú esté sobre otros contenidos */
         }
 
         .menu-logo {
@@ -143,36 +145,34 @@
             max-height: 35px;
         }
 
-        .SeparaCita {
-            background: 0;
+        .menu li {
+            display: block;
+            padding: 10px 0;
         }
 
         .menu {
-            position: absolute;
+            position: fixed; /* Cambiado de 'absolute' a 'fixed' para que el menú se expanda desde arriba */
             box-sizing: border-box;
             text-align: center;
             width: 100%;
-            right: 0;
-            top: 0;
+            top: -500%; /* Inicialmente oculto arriba */
+            left: 0;
             padding: 70px 0 30px;
-            background: rgba(167, 166, 166, 0.2);
+            background: rgba(167, 166, 166, 1);
             backdrop-filter: blur(4px);
             -webkit-font-smoothing: antialiased;
-            opacity: 0;
-            transform-origin: 0px 0px;
-            transform: translateX(0);
-            transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-
-            & li:hover,
-            & .SeparaCita:hover {
-                border-radius: 15px;
-                background: rgba(167, 166, 166, 0.2);
-            }
+            transition: top 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+            overflow-y: auto; /* Permite desplazamiento si el contenido es largo */
+            height: auto; /* Asegura que el menú se expanda completamente */
         }
 
         .menu-container input:checked ~ .menu {
-            width: 100%;
-            opacity: 1;
+            top: 0; /* Cambia 'top' a 0 para mostrar el menú */
+        }
+
+        .menu li:hover {
+            border-radius: 15px;
+            background: rgba(167, 166, 166, 0.2);
         }
     }
 
@@ -182,10 +182,13 @@
             width: 100%;
         }
 
-        .menu-container a {
-            color: #000000;
+        .menu ul {
+            display: flex;
         }
 
+        .menu li + li {
+            margin-left: 10px;
+        }
         .menu-container input {
             display: none;
         }
@@ -200,15 +203,6 @@
             width: 100%;
             display: flex;
             justify-content: space-between;
-        }
-
-        .menu ul {
-            display: flex;
-            padding: 0;
-        }
-
-        .menu li {
-            padding: 0 20px;
         }
     }
 </style>
