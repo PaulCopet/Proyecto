@@ -3,7 +3,7 @@
     "tasks": [
         {
             "type": "npm",
-            "script": "dev",
+            "script": "start:ide", // This is the script name in package.json
             "runOptions": {
                 "runOn": "folderOpen"
             },
