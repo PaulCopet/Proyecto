@@ -2,20 +2,13 @@
 interface Props {
 	// El título de la página
 	title: string;
-	// El tipo de padding, puede ser 'normal' o 'custom'
-	padding: "normal" | "custom";
 }
 // Importamos los componentes Header
 import Header from "../components/Header.astro";
 import Header2 from "../components/Header2.astro";
 
 // Exportamos las props
-const { title, padding } = Astro.props;
-// Definimos el padding normal y el custom
-const paddingNormal = "0"; // normal
-const paddingCustom = "0px 126.391px"; // custom
-// Seleccionamos el padding en funcion de la propiedad seleccionada
-const selectedPadding = padding === "normal" ? paddingNormal : paddingCustom;
+const { title, } = Astro.props;
 ---
 
 <!doctype html>
@@ -30,7 +23,7 @@ const selectedPadding = padding === "normal" ? paddingNormal : paddingCustom;
 		<title>{title}</title>
 	</head>
 	<!-- Usamos la propiedad padding para el padding del body -->
-	<body style={`padding: ${selectedPadding};`}>
+	<body>
 		<Header />
 		<slot />
 	</body>
