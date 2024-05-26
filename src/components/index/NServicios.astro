@@ -1,23 +1,148 @@
-<section>
+<section id="2">
     <div class="text-center">
-        <h2 class="text-4xl font-bold mb-16 mt-10">Nuestros Servicios</h2>
-        <div class="contenedor flex flex-wrap">
-            <div class="columna">
-                <img src="./public/index/1.webp" alt="" />
+        <h2 class="font-bold mb-16 mt-10">Nuestros Servicios</h2>
+        <div class="contenedor flex justify-center">
+            <!-- contenedor -->
+            <div class="flex flex-col items-center">
+                <picture class="columna1 overflow-hidden">
+                    <!-- columna1 -->
+                    <img
+                        src="./public/img/index/1.jpg"
+                        alt="Lorem"
+                        class="w-full h-full"
+                    />
+                </picture>
+                <p class="mt-2 font-semibold">Lorem</p>
             </div>
-            <div class="columna">
-                <img src="./public/index/1.webp" alt="" />
+            <div class="flex flex-col items-center">
+                <picture class="columna2 overflow-hidden">
+                    <!-- columna2 -->
+                    <img
+                        src="./public/img/index/2.jpg"
+                        alt="Lorem"
+                        class="w-full h-full"
+                    />
+                </picture>
+                <p class="mt-2 font-semibold">Lorem</p>
             </div>
-            <div class="columna">
-                <img src="./public/index/1.webp" alt="" />
+            <div class="flex flex-col items-center">
+                <picture class="columna3 overflow-hidden">
+                    <!-- columna3 -->
+                    <img
+                        src="./public/img/index/3.jpg"
+                        alt="Lorem"
+                        class="w-full h-full"
+                    />
+                </picture>
+                <p class="mt-2 font-semibold">Lorem</p>
             </div>
         </div>
+
+        <button class="w-4 h-3">Mas</button>
+
     </div>
 </section>
 
 <style>
+    section {
+        padding: 2% 10%;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+        line-height: 1.5;
+    }
+
     .contenedor {
-        /* TailwindCSS flex flex-wrap*/
-        padding: ;
+        width: 100%;
+        & div {
+            width: 100%;
+        }
+    }
+
+    button {
+        margin-top: 2.5rem;
+        background-color: chartreuse;
+        width: 10rem;
+        height: 2.5rem;
+        border-radius: 15px;
+        font-size: 1.5rem;
+        font-weight: 500;
+        /* crear un hover que cambia de color con una animacion suave */
+        transition: background-color 0.2s ease-in-out;
+        &:hover {
+            background-color: #3e8f3e;
+        }
+    }
+
+    @media only screen and (max-width: 828px) {
+        .contenedor {
+            width: 100%;
+            flex-direction: column;
+            & div {
+                margin: 0;
+                & + div {
+                    margin-top: 1.5rem;
+                }
+            }
+        }
+        .columna1,
+        .columna2,
+        .columna3 {
+            width: 100%;
+            height: 325px;
+            border-radius: 15px;
+
+            & img {
+                object-fit: cover;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 828px) {
+        .contenedor picture {
+            height: 20rem;
+            width: 20rem;
+            min-height: 10rem;
+        }
+
+        /* Cuando se pase por cada columna, se hacer una transiccion de cambio de radius
+        donde se vuelva a colocar de tamaño grande, donde enfoca el contenido y los demas se
+        colaca un filtro para opacar y tener la antención en la columna que se enfoque */
+        .columna1 {
+            border-radius: 7% 100% 7% 7% / 7% 100% 7% 7%;
+            transition: border-radius 0.2s ease-in-out;
+            & img {
+                object-fit: cover;
+            }
+
+            &:hover {
+                border-radius: 15px;
+            }
+        }
+        .columna2 {
+            border-radius: 7% 7% 50% 50% / 7% 7% 50% 50%;
+            transition: border-radius 0.2s ease-in-out;
+            & img {
+                object-fit: cover;
+            }
+            &:hover {
+                border-radius: 15px;
+            }
+        }
+        .columna3 {
+            border-radius: 100% 7% 7% 7% / 100% 7% 7% 7%;
+            transition: border-radius 0.2s ease-in-out;
+            & img {
+                object-fit: cover;
+            }
+            &:hover {
+                border-radius: 15px;
+            }
+        }
     }
 </style>
