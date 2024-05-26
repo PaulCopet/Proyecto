@@ -37,6 +37,9 @@
                 <p class="mt-2 font-semibold">Lorem</p>
             </div>
         </div>
+
+        <button class="w-4 h-3">Mas</button>
+
     </div>
 </section>
 
@@ -58,6 +61,21 @@
         width: 100%;
         & div {
             width: 100%;
+        }
+    }
+
+    button {
+        margin-top: 2.5rem;
+        background-color: chartreuse;
+        width: 10rem;
+        height: 2.5rem;
+        border-radius: 15px;
+        font-size: 1.5rem;
+        font-weight: 500;
+        /* crear un hover que cambia de color con una animacion suave */
+        transition: background-color 0.2s ease-in-out;
+        &:hover {
+            background-color: #3e8f3e;
         }
     }
 
@@ -91,22 +109,39 @@
             width: 20rem;
             min-height: 10rem;
         }
+
+        /* Cuando se pase por cada columna, se hacer una transiccion de cambio de radius
+        donde se vuelva a colocar de tamaño grande, donde enfoca el contenido y los demas se
+        colaca un filtro para opacar y tener la antención en la columna que se enfoque */
         .columna1 {
             border-radius: 7% 100% 7% 7% / 7% 100% 7% 7%;
+            transition: border-radius 0.2s ease-in-out;
             & img {
                 object-fit: cover;
+            }
+
+            &:hover {
+                border-radius: 15px;
             }
         }
         .columna2 {
             border-radius: 7% 7% 50% 50% / 7% 7% 50% 50%;
+            transition: border-radius 0.2s ease-in-out;
             & img {
                 object-fit: cover;
+            }
+            &:hover {
+                border-radius: 15px;
             }
         }
         .columna3 {
             border-radius: 100% 7% 7% 7% / 100% 7% 7% 7%;
+            transition: border-radius 0.2s ease-in-out;
             & img {
                 object-fit: cover;
+            }
+            &:hover {
+                border-radius: 15px;
             }
         }
     }
