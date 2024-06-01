@@ -3,36 +3,35 @@
 import Header from "../components/Header.astro";
 // Importamos los componentes Footer
 import Footer from "../components/Footer.astro";
+import { ViewTransitions } from "astro:transitions";
 ---
 
 <!doctype html>
 <html lang="es">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
 		<!-- Usamos la propiedad title para el título de la página -->
-		<title></title>
+		<title>CDA</title>
+		<ViewTransitions />
 	</head>
 	<!-- Usamos la propiedad padding para el padding del body -->
 	<body>
 		<Header />
-		<slot />
+		<main>
+			<slot />
+		</main>
 		<Footer />
+		<style is:global>
+			:root {
+				font-family: "Poppins", sans-serif;
+				margin: 0;
+			}
+			html {
+				scroll-behavior: smooth;
+			}
+			body {
+				line-height: 0;
+			}
+			@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+		</style>
 	</body>
 </html>
-<style is:global>
-	:root {
-		font-family: "Poppins", sans-serif;
-		margin: 0;
-	}
-	html {
-		scroll-behavior: smooth;
-	}
-	body {
-		line-height: 0;
-	}
-	@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-</style>
