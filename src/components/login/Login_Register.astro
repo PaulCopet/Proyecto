@@ -1,22 +1,22 @@
-<section class="w-full h-full grid justify-center">
-    <div class="contenedor w-full">
+<section class="grid justify-center content-center">
+    <div class="contenedor w-full h-full">
         <input type="checkbox" id="chk" aria-hidden="true" />
 
         <div class="login">
             <form class="form">
-                <label for="chk" aria-hidden="true">Log in</label>
+                <label for="chk" aria-hidden="true">Iniciar Sección</label>
                 <input
                     class="input"
                     type="email"
                     name="email"
-                    placeholder="Email"
+                    placeholder="Correo Electrónico"
                     required=""
                 />
                 <input
                     class="input"
                     type="password"
                     name="pswd"
-                    placeholder="Password"
+                    placeholder="Contraseña"
                     required=""
                 />
                 <button>Log in</button>
@@ -25,29 +25,29 @@
 
         <div class="register">
             <form class="form">
-                <label for="chk" aria-hidden="true">Register</label>
+                <label for="chk" aria-hidden="true">Regístrate</label>
                 <input
                     class="input"
                     type="text"
                     name="txt"
-                    placeholder="Username"
+                    placeholder="Nombre Completo"
                     required=""
                 />
                 <input
                     class="input"
                     type="email"
                     name="email"
-                    placeholder="Email"
+                    placeholder="Correo Electrónico"
                     required=""
                 />
                 <input
                     class="input"
                     type="password"
                     name="pswd"
-                    placeholder="Password"
+                    placeholder="Contraseña"
                     required=""
                 />
-                <button>Register</button>
+                <button>Registrarse</button>
             </form>
         </div>
     </div>
@@ -55,7 +55,8 @@
 
 <style>
     section {
-        padding: 5rem 0px 2rem 0px;
+        height: 100vh;
+        margin-bottom: -3rem;
     }
     .contenedor {
         position: relative;
@@ -65,14 +66,14 @@
         background-color: #240046;
         max-height: 420px;
         overflow: hidden;
-        border-radius: 12px;
+        border-radius: 15px;
         box-shadow: 7px 7px 10px 3px #24004628;
     }
 
     .form {
         display: flex;
         flex-direction: column;
-        gap: 14px;
+        gap: 20px;
         padding: 24px;
     }
 
@@ -89,7 +90,7 @@
     }
 
     .login label {
-        margin: 10% 0 5%;
+        margin: 5% 0 5%;
     }
 
     label {
@@ -104,7 +105,7 @@
 
     .input {
         width: 100%;
-        height: 40px;
+        height: 45px;
         background: #e0dede;
         padding: 10px;
         border: none;
@@ -115,14 +116,9 @@
     /*Register*/
     .register {
         background: #eee;
-        border-radius: 60% / 10%;
-        transform: translateY(10%);
+        border-radius: 20% 20% 0 0 /10% 10% 0 0;
+        transform: translateY(0%);
         transition: 0.8s ease-in-out;
-
-        &label {
-            margin: 0;
-            padding: 0;
-        }
     }
 
     .register label {
@@ -131,7 +127,7 @@
     }
 
     #chk:checked ~ .register {
-        transform: translateY(-60%);
+        transform: translateY(-70%);
     }
 
     #chk:checked ~ .register label {
@@ -141,13 +137,13 @@
 
     #chk:checked ~ .login label {
         transform: scale(0.6);
-        margin: 5% 0 5%;
+        margin: 0;
     }
     /*Button*/
     .form button {
-        width: 85%;
+        width: 100%;
         height: 40px;
-        margin: 12px auto 10%;
+        margin: 0 auto 10%;
         color: #fff;
         background: #573b8a;
         font-size: 1rem;
