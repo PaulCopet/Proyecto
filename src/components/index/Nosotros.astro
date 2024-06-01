@@ -1,7 +1,129 @@
-<section class="flex">
-
+<section class="overflow-hidden">
+    <div class="w-full">
+        <div class="Content flex overflow-hidden">
+            <div class="ALL">
+                <h1>Sobre Nosotros</h1>
+                <div class="Info">
+                    <p>
+                        Somos un CDA que ofrece servicios de alta calidad
+                        certificados con los mas altos estandares
+                    </p>
+                </div>
+                <div class="buttons">
+                    <a class="botton" href="#">Empezar</a>
+                    <a class="botton2" href="#">Leer más</a>
+                </div>
+            </div>
+            <div class="contenedor-imagen">
+                <picture class="imagen">
+                    <img src="../../../public/img/2.jpg" />
+                </picture>
+            </div>
+        </div>
+    </div>
 </section>
 
 <style>
+    .Content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        width: 100vw;
+        height: 100vh;
+    }
 
+    .Content h1 {
+        display: flex;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 50px;
+        color: #ffc107;
+        margin-bottom: 40px;
+    }
+    .ALL {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        background-color: #3d3d3d;
+        width: 100%;
+        height: 100%;
+    }
+    .Content div {
+        width: 50%;
+    }
+    .Info p {
+        text-align: left; /* Alinea el texto a ambos lados */
+        line-height: 36px; /* Ajusta el espacio entre las líneas */
+        font-weight: 500; /* Ajusta la negrita del texto */
+        letter-spacing: -0.5px; /* Ajusta el espacio entre las letras */
+        font-size: 1.5em; /* Ajusta el tamaño del texto */
+        color: #ffffff; /* Ajusta el color del texto */
+        margin: 15px 0; /* Añade margen arriba y abajo */
+        margin-left: 20px; /* Añade margen a la izquierda */
+        padding: 0 10px; /* Añade padding a los lados */
+    }
+    .buttons {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        font-weight: 700;
+        margin-left: 20px;
+    }
+    .botton {
+        background-color: #f6a700;
+        color: white;
+        padding: 15px;
+        font-size: 1.2em;
+        border-radius: 10px;
+        text-decoration: none;
+        margin-top: 20px;
+        width: 150px; /* Establece el ancho del botón */
+        height: 50px; /* Establece la altura del botón */
+        display: flex; /* Asegura que el texto esté centrado */
+        justify-content: center; /* Centra el texto horizontalmente */
+        align-items: center; /* Centra el texto verticalmente */
+        text-align: center; /* Asegura que el texto esté centrado */
+    }
+    .botton2 {
+        background-color: #e2e2e2;
+        color: rgb(0, 0, 0);
+        padding: 15px;
+        border-radius: 10px;
+        font-size: 1.2em;
+        text-decoration: none;
+        margin-top: 20px;
+        margin-left: 20px;
+        width: 150px; /* Establece el ancho del botón */
+        height: 50px; /* Establece la altura del botón */
+        display: flex; /* Asegura que el texto esté centrado */
+        justify-content: center; /* Centra el texto horizontalmente */
+        align-items: center; /* Centra el texto verticalmente */
+        text-align: center; /* Asegura que el texto esté centrado */
+    }
+    .botton,
+    .botton2 {
+        transition:
+            background-color 0.5s,
+            color 0.3s;
+        margin-left: 15px;
+    }
+
+    .botton:hover {
+        background-color: #ffb433;
+        box-shadow: 0 0 10px #ffb433;
+    }
+    .botton2:hover {
+        background-color: #000000;
+        color: white;
+        box-shadow: 0 0 10px #000000;
+    }
+
+    .contenedor-imagen img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 </style>

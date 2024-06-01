@@ -1,21 +1,24 @@
 ---
 interface Props {
     title: string;
+    direction: string;
 }
 
-const { title }: Props = Astro.props;
+const { title, direction }: Props = Astro.props;
 ---
 
-<div class="flex items-center pt-2">
-    <div class="logo overflow-hidden p-5 grid items-center">
-        <!-- Logos -->
-        <img src="https://example.com/your_image.png" alt="Your Image" />
+<a href={direction}>
+    <div class="flex items-center pt-2">
+        <div class="logo overflow-hidden p-5 grid items-center">
+            <!-- Logos -->
+            <img src="https://example.com/your_image.png" alt="Your Image" />
+        </div>
+        <div class="text flex items-center pl-10">
+            <!-- Titulo y descripción -->
+            <h1 class="font-bold">{title}</h1>
+        </div>
     </div>
-    <div class="text flex items-center pl-10">
-        <!-- Titulo y descripción -->
-        <h1 class="font-bold">{title}</h1>
-    </div>
-</div>
+</a>
 
 <style>
     :root {
