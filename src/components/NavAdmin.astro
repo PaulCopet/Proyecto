@@ -1,0 +1,40 @@
+---
+import FotosCirculo from "./FotosCirculoAdmin.astro";
+---
+
+<nav>
+    <ul class="grid gap-5">
+        <a href="adminRegCliente"
+            ><FotosCirculo
+                direccion="public/img/Admin/Client.svg"
+                alt="Cliente"
+            /></a
+        >
+        <a href="adminVehiculo"
+            ><FotosCirculo
+                direccion="public/img/Admin/Car.svg"
+                alt="Vehículo"
+            /></a
+        >
+        <a href="adminServicio"
+            ><FotosCirculo
+                direccion="public/img/Admin/Servicio.svg"
+                alt="Servicio"
+            /></a
+        >
+        <a href="adminPago"
+            ><FotosCirculo direccion="public/img/Admin/Pay.svg" alt="Pago" /></a
+        >
+    </ul>
+</nav>
+
+<style>
+    nav {
+        width: auto;
+        height: auto;
+        background: #d9d9d9;
+        border-radius: 15px;
+        padding: 1rem;
+        display: grid;
+    }
+</style>

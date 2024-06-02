@@ -2,16 +2,17 @@
 interface Props {
     title: string;
     direction: string;
+    img: string;
 }
 
-const { title, direction }: Props = Astro.props;
+const { title, direction, img }: Props = Astro.props;
 ---
 
-<a href={direction}>
+<a href={direction} class="w-auto h-auto">
     <div class="flex items-center pt-2">
         <div class="logo overflow-hidden p-5 grid items-center">
             <!-- Logos -->
-            <img src="https://example.com/your_image.png" alt="Your Image" />
+            <img src={img} alt="Your Image" />
         </div>
         <div class="text flex items-center pl-10">
             <!-- Titulo y descripción -->

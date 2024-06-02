@@ -1,9 +1,49 @@
 ---
+import Inputs from "../components/Inputs.astro";
 import Layout from "../layouts/Layout.astro";
-
+import Button from "../components/Button.astro";
+import NavAdmin from "../components/NavAdmin.astro";
 ---
 
 <Layout>
-
-    
+    <section>
+        <div class="flex gap-5">
+            <NavAdmin />
+            <article>
+                <Inputs name="Nombre" />
+                <Inputs name="Apellidos" />
+                <Inputs name="Tipo de identificación" />
+                <Inputs name="Numero de identificación" />
+                <Inputs name="Direccion" />
+                <Inputs name="Teléfono" />
+                <Inputs name="Correo electrónico" />
+                <Button text="Siguiente" direction="adminVehiculo" />
+            </article>
+        </div>
+    </section>
 </Layout>
+
+<style>
+    section {
+        padding: 5rem 5rem 0 5rem;
+        height: 100vh;
+        margin-bottom: -10rem;
+    }
+
+    article {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        background: #d9d9d9;
+        background-image: url("public/img/Admin/Imagenes De Vochos.png");
+        border-radius: 15px;
+        padding: 4rem 0;
+        padding-left: 2rem;
+        padding-right: 10rem;
+        overflow: hidden;
+        background-size: 20rem; /* Ajusta la imagen al tamaño del artículo */
+        background-position: 105%; /* Centra la imagen */
+        background-repeat: no-repeat; /* Evita que la imagen se repita */
+    }
+</style>

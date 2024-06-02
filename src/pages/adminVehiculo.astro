@@ -1,0 +1,82 @@
+---
+import Inputs from "../components/Inputs.astro";
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+import NavAdmin from "../components/NavAdmin.astro";
+---
+
+<Layout>
+    <section>
+        <div class="flex gap-5 items-center justify-center">
+            <NavAdmin />
+            <article>
+                <div class="contenedorInpusts">
+                    <Inputs name="Placa" />
+                    <Inputs name="Linea" />
+                    <Inputs name="Número de chasis" />
+                    <Inputs name="Modelo" />
+                    <Inputs name="Número de motor" />
+                    <Inputs name="Color" />
+                    <Inputs name="Marca" />
+                    <Inputs name="Clase" />
+                    <Inputs name="Servicio" />
+                    <Inputs name="Carrocería" />
+                </div>
+                <aside>
+                    <picture>
+                        <img src="public/img/Admin/admin5.jpg" alt="" />
+                    </picture>
+                    <div class="buton w-full">
+                        <Button text="Siguiente" direction="" />
+                    </div>
+                </aside>
+            </article>
+        </div>
+    </section>
+</Layout>
+
+<style>
+    section {
+        padding: 5rem 5rem 2rem 5rem;
+        height: 100vh;
+        margin-bottom: -10rem;
+    }
+
+    article {
+        width: 100%;
+        display: flex;
+        background: #d9d9d9;
+        border-radius: 15px;
+    }
+
+    .contenedorInpusts {
+        width: 80%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+
+        padding: 4rem 2rem;
+    }
+
+    aside {
+        display: block;
+        padding: 2rem 2rem 2rem 0;
+        width: auto;
+    }
+    picture {
+        width: 100%;
+        max-width: 15rem;
+        height: 75%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2rem;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+    }
+</style>

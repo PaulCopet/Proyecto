@@ -1,0 +1,26 @@
+---
+interface Props {
+    direccion: string;
+    alt: string;
+}
+const { direccion, alt }: Props = Astro.props;
+---
+
+<picture class="w-24 h-24 overflow-hidden">
+    <img src={direccion} alt={alt} />
+</picture>
+
+<style>
+    picture {
+        border-radius: 100%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #f6a900;
+        transition: background 0.3s;
+        &:hover {
+            background: #e09900;
+        }
+    }
+</style>

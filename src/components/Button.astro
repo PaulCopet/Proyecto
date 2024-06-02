@@ -1,0 +1,69 @@
+---
+interface Props {
+    text: string;
+    direction: string;
+}
+const { text, direction }: Props = Astro.props;
+const nextPage = {direction};
+function handleClick() {
+    window.location.href = nextPage.direction;
+}
+---
+
+<button class="animated-button" onclick={nextPage.direction}>
+    <span>{text}</span>
+    <span></span>
+</button>
+
+<style>
+    .animated-button {
+        position: relative;
+        width: 100%;
+        height: 4rem;
+        display: inline-block;
+        padding: 12px 24px;
+        border: none;
+        font-size: 20px;
+        background-color: #ffbc2b;
+        border-radius: 20px;
+        font-weight: 600;
+        color: #000000;
+        box-shadow: 0 0 0 5px #00000020;
+        cursor: pointer;
+        overflow: hidden;
+        transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .animated-button span:last-child {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 20px;
+        height: 20px;
+        background-color: #f6a900;
+        border-radius: 50%;
+        opacity: 0;
+        transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .animated-button span:first-child {
+        position: relative;
+        z-index: 1;
+    }
+
+    .animated-button:hover {
+        box-shadow: 0 0 0 5px #dd9700;
+        color: #ffffff;
+    }
+
+    .animated-button:active {
+        scale: 0.95;
+    }
+
+    .animated-button:hover span:last-child {
+        width: 105%;
+        height: 200px;
+        opacity: 1;
+    }
+</style>
